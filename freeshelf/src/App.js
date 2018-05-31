@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import books from './books.json';
 
@@ -12,15 +11,12 @@ class App extends Component {
   }
   render() {
     const books = this.state.books;
-    const author = this.state.books.author;
-    const title = this.state.books.title;
-    const pic = this.state.books.coverImageUrl;
-    const short = this.state.books.shortdescription;
     return (
-      <div className="App">
+        <div className="app">
         <p className="App-intro"> 
         <div className="generalInfo">
         {books.map((books, idx) =>
+        <div className="book">
         <div key={idx} className="title">
         {books.title}
         </div>
@@ -28,15 +24,15 @@ class App extends Component {
         {books.author}
         </div>
         <div key={idx} className="short">
-        {books.shortdescription}
+        {books.shortDescription}
         </div>
-        <div key={idx} className="pic">
-        {books.coverImageUrl}
+        <img key={idx} className="pic" src={books.coverImageUrl} />
+        <hr/>
         </div>
         )}
         </div>
         </p>
-      </div>
+        </div>
     );
   }
 }

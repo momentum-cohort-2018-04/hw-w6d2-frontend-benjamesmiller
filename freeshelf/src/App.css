@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
 }
 
 .App-logo {
@@ -20,6 +25,24 @@
 
 .App-intro {
   font-size: large;
+}
+
+.pic {
+  padding: 10px;
+  max-width: 33%;
+  grid-column: 2;
+}
+
+.title {
+  grid-column: 1;
+}
+
+.author {
+  grid-column: 1;
+}
+
+.short {
+  grid-column: 1;
 }
 
 @keyframes App-logo-spin {
